@@ -1,0 +1,262 @@
+/* ===================================================
+   PAGES.CSS — styles for About, Collections, Contact
+   Import this in App.jsx alongside App.css
+   =================================================== */
+
+/* Active nav link highlight */
+.nav-links .active-link {
+  color: var(--gold) !important;
+}
+
+/* ─── SHARED PAGE HEADER ─────────────────────────── */
+.page-header {
+  padding: 160px 60px 80px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--bdr);
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 420px; height: 420px;
+  border: 1px solid var(--bdr);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  border: 1px solid var(--bdr);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.page-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 10.5px; letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold); margin-bottom: 22px;
+}
+.page-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--gold);
+}
+.page-title {
+  font-family: var(--fd);
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 300; line-height: 1.05;
+  letter-spacing: -1px;
+}
+.page-title em { font-style: italic; }
+.page-sub {
+  font-size: 15px; color: var(--sub);
+  max-width: 520px; margin-top: 18px;
+  line-height: 1.85; font-weight: 300;
+}
+
+/* ─── ABOUT — STORY SECTION ──────────────────────── */
+.about-story {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--bg);
+}
+.about-story-img {
+  height: 600px; overflow: hidden;
+}
+.about-story-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.about-story-img:hover img { transform: scale(1.04); }
+.about-story-text {
+  padding: 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  border-left: 1px solid var(--bdr);
+}
+.about-story-label {
+  font-size: 10.5px; letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold); margin-bottom: 22px;
+}
+.about-story-title {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300; line-height: 1.2; margin-bottom: 24px;
+}
+.about-story-title em { font-style: italic; }
+.about-story-body {
+  font-size: 14px; color: var(--sub);
+  line-height: 1.9; font-weight: 300;
+}
+
+/* ─── ABOUT — STATS BAR ──────────────────────────── */
+.about-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--bdr);
+  border-bottom: 1px solid var(--bdr);
+  background: var(--bg2);
+}
+.about-stat {
+  padding: 52px 40px;
+  border-right: 1px solid var(--bdr);
+  text-align: center;
+}
+.about-stat:last-child { border-right: none; }
+.about-stat .num {
+  display: block;
+  font-family: var(--fd);
+  font-size: 54px; font-weight: 300;
+  color: var(--gold); line-height: 1.1;
+}
+.about-stat .label {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--sub); margin-top: 8px;
+}
+
+/* ─── ABOUT — VALUES ─────────────────────────────── */
+.about-values { padding: 80px 60px; background: var(--bg); }
+.values-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px; margin-top: 48px;
+}
+.value-card {
+  padding: 36px 28px;
+  background: var(--bg2); border: 1px solid var(--bdr);
+  transition: border-color 0.3s;
+}
+.value-card:hover { border-color: var(--bdr-h); }
+.value-icon {
+  font-size: 26px; color: var(--gold);
+  margin-bottom: 20px; display: block;
+}
+.value-title {
+  font-family: var(--fd); font-size: 22px;
+  font-weight: 400; margin-bottom: 12px;
+}
+.value-body {
+  font-size: 13px; color: var(--sub);
+  line-height: 1.8; font-weight: 300;
+}
+
+/* ─── ABOUT — QUOTE ──────────────────────────────── */
+.about-quote {
+  padding: 90px 60px;
+  background: var(--bg2);
+  text-align: center;
+  border-top: 1px solid var(--bdr);
+}
+.about-quote-mark {
+  font-family: var(--fd); font-size: 96px;
+  color: var(--gold); opacity: 0.25; line-height: 1;
+  margin-bottom: 20px;
+}
+.about-quote-text {
+  font-family: var(--fd);
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 300; font-style: italic;
+  line-height: 1.5; color: var(--text);
+  max-width: 700px; margin: 0 auto 24px;
+}
+.about-quote-attr {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold);
+}
+
+/* ─── COLLECTIONS PAGE ───────────────────────────── */
+.collections-section {
+  padding: 60px 60px 80px;
+  background: var(--bg);
+}
+.collections-filter {
+  display: flex; gap: 0;
+  border: 1px solid var(--bdr);
+  width: fit-content; margin-bottom: 48px;
+}
+.filter-btn {
+  padding: 11px 26px; font-size: 10.5px;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: 0.2s; color: var(--sub);
+  border: none; background: transparent; font-family: var(--fb);
+}
+.filter-btn.active { background: var(--gold); color: #000; font-weight: 500; }
+.filter-btn:hover:not(.active) { color: var(--text); }
+.collections-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+}
+
+/* ─── CONTACT PAGE ───────────────────────────────── */
+.contact-section {
+  padding: 80px 60px;
+  background: var(--bg);
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+}
+.contact-form-title {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300; margin-bottom: 36px;
+}
+.contact-form-title em { font-style: italic; }
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group {
+  display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;
+}
+.form-label {
+  font-size: 10.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--sub);
+}
+.form-input,
+.form-textarea {
+  padding: 14px 18px;
+  background: var(--bg2); border: 1px solid var(--bdr);
+  color: var(--text); font-family: var(--fb);
+  font-size: 13px; outline: none;
+  transition: border-color 0.3s; width: 100%;
+}
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--dim); }
+.form-input:focus,
+.form-textarea:focus { border-color: var(--gold); }
+.form-textarea { resize: vertical; min-height: 140px; }
+
+/* Contact success state */
+.contact-success {
+  padding: 60px 40px;
+  background: var(--bg2); border: 1px solid var(--bdr);
+  text-align: center;
+}
+.contact-success-icon {
+  font-size: 28px; color: var(--gold); margin-bottom: 16px;
+}
+.contact-success-title {
+  font-family: var(--fd); font-size: 28px; margin-bottom: 12px;
+}
+.contact-success-sub {
+  font-size: 14px; color: var(--sub); font-weight: 300; line-height: 1.8;
+}
+
+/* Contact info panel */
+.contact-info-title {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300; margin-bottom: 36px;
+}
+.contact-info-title em { font-style: italic; }
+.info-items { display: flex; flex-direction: column; gap: 8px; }
+.info-item-label {
+  font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.info-item-value {
+  font-size: 14px; color: var(--sub);
+  line-height: 1.8; font-weight: 300;
+}
+.info-divider {
+  width: 100%; height: 1px;
+  background: var(--bdr); margin: 20px 0;
+}
