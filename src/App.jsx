@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './pages.css';
 import './Cart.css';
-import {supabase} from './supabase';
+import {Supabase} from './supabase';
 
 
 import { CartProvider } from './CartContext';
