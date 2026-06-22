@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../CartContent';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const location  = useLocation();
+  const { cartCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -11,7 +13,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Reset scroll to top on every page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -43,7 +44,16 @@ export default function Navbar() {
       <div className="nav-icons">
         <div className="nav-icon">⌕</div>
         <div className="nav-icon">♡</div>
-        <div className="nav-icon cart">⊡</div>
+
+        {/* Cart icon — navigates to /cart and shows live count */}
+        <Link to="/cart" className="nav-icon cart-icon-link" style={{ textDecoration: 'none' }}>
+          <div className="nav-icon" style={{ position: 'relative', border: 'none' }}>
+            ⊡
+            {cartCount > 0 && (
+              <span className="cart-count-badge">{cartCount}</span>
+            )}
+          </div>
+        </Link>
       </div>
     </nav>
   );
