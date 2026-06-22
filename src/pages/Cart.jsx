@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase, getSessionId } from '../supabase';
-import { useCart } from '../CartContent';
+import { useCart } from '../CartContext';
 import Footer from '../components/Footer';
 
 function parsePrice(str) {

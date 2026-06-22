@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase, getSessionId } from '../supabase';
-import { useCart } from '../CartContent';
+import { useCart } from '../CartContext';
 
 export default function ProductCard({ product }) {
   const { brand, name, price, oldPrice, badge, img } = product;

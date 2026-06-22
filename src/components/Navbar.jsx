@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useCart } from '../CartContent';
+import { useCart } from '../CartContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

@@ -5,7 +5,7 @@ import './Cart.css';
 import {supabase} from './supabase';
 
 
-import { CartProvider } from './CartContent';
+import { CartProvider } from './CartContext';
 import Navbar      from './components/Navbar';
 import Home        from './pages/Home';
 import About       from './pages/About';
