@@ -3,7 +3,7 @@ import './App.css';
 import './pages.css';
 import './Cart.css';
 import {supabase} from './supabase';
-import { CartProvider } from './CartContext';
+
 
 import { CartProvider } from './CartContent';
 import Navbar      from './components/Navbar';
